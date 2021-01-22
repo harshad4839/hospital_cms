@@ -1,0 +1,19 @@
+{% extends 'cms/base.html' %}
+
+{% block content %}
+
+{{ item.name }}
+
+<form method="POST" action="{% url 'patientlist' item.id %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+<button type="submit">save</button>
+</form>
+
+<form method="POST" action="{% url 'deleteitem' item.id %}">
+  {% csrf_token %}
+<button type="submit">delete</button>
+</form>
+
+
+{% endblock %}

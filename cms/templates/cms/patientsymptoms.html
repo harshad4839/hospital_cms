@@ -1,0 +1,29 @@
+{% extends 'cms/base.html' %}
+
+{% block content %}
+
+    {% for obj in dignocis_id %}
+
+        <br>
+        <b>Patient Name          :  {{obj.patient.name}}</b>
+        <br>
+        <b>Disease Name          :  {{obj.name}}</b>
+        <br>
+        <b>Disease Symptoms      :  {{obj.symptoms}}</b>
+        <br>
+        <b>Priscribed medicines  :  {{obj.medcines}}</b>
+        <br>
+        <b>Date of consulatation  :  {{obj.date_modified}}</b>
+        <br>
+        <br>
+        <br>
+    {% endfor %}
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <a role="button" href="{% url 'docter' %}"><b>Create New Dignosis</b></a>
+        <br>
+        <br>
+{% endblock %}

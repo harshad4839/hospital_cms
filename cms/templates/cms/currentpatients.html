@@ -1,0 +1,23 @@
+{% extends 'cms/base.html' %}
+
+{% block content %}
+
+    {% for patient_id in patients %}
+
+
+        <br>
+        <br>
+        <a href="{% url 'patientlist' patient_id.id %}">{{patient_id.name}} </a>
+        <a href="{% url 'patientdignosis' patient_id.id %}">Patient Dignosis </a>
+        <br>
+        <br>
+        {% endfor %}
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <a role="button" href="{% url 'patient' %}"><b>Add patient</b></a>
+        <br>
+        <br>
+{% endblock %}
